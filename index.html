@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Printable Year Calendar</title>
+    <meta
+      name="description"
+      content="Free printable yearly calendar. Choose a year and print all 12 months in landscape format."
+    />
+    <meta name="theme-color" content="#ffffff" />
 
     <style>
       * {
@@ -118,36 +123,47 @@
       /* THREE MINI CALENDARS */
 
       .mini-calendars {
-        display: flex;
-        gap: 13px;
+        display: grid;
+        grid-template-columns: repeat(3, 94px);
+        column-gap: 13px;
+        align-items: start;
         flex-shrink: 0;
-        align-items: flex-end;
       }
 
       .mini-calendar {
         width: 94px;
+        min-width: 0;
       }
 
       .mini-title {
+        height: 14px;
+        line-height: 14px;
+        margin: 0 0 4px;
         text-align: center;
         font-size: 9px;
-        margin-bottom: 4px;
-        color: #444;
         font-weight: 600;
+        color: #444;
+        white-space: nowrap;
       }
 
       .mini-grid {
         display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        gap: 1px 0;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        grid-template-rows: repeat(7, 10px);
+        gap: 0;
+        width: 100%;
         font-size: 7px;
         text-align: center;
         font-variant-numeric: tabular-nums;
       }
 
       .mini-grid span {
-        line-height: 1.4;
-        min-height: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 0;
+        height: 10px;
+        line-height: 1;
       }
 
       .mini-grid .mini-weekday {
